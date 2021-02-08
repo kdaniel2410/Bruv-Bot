@@ -27,7 +27,7 @@ public class TwitterStatusListener implements StatusListener {
         EmbedBuilder embed = new EmbedBuilder()
                 .setColor(Constants.EMBED_COLOR)
                 .setAuthor(status.getUser().getScreenName(), status.getUser().getURL(), status.getUser().getProfileImageURL())
-                .setDescription(status.getText() + " /n/n Click [here](" + url + ") to go to open twitter")
+                .setDescription(status.getText() + " Click [here](" + url + ") to go to open twitter")
                 .setTimestamp(status.getCreatedAt().toInstant())
                 .setFooter(status.getRetweetCount() + "\uD83D\uDD04 " + status.getFavoriteCount() + "\u2764\uFE0F");
         api.getChannelById(channelId).flatMap(Channel::asTextChannel).ifPresent(channel -> channel.sendMessage(embed));

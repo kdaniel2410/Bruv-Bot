@@ -13,7 +13,7 @@ public class MinecraftCommand implements CommandExecutor {
     public void onCommand(TextChannel channel, Message message) {
         EmbedBuilder embed = new EmbedBuilder()
                 .setColor(Constants.EMBED_COLOR)
-                .setDescription("Use following address to join the vanilla server ``mc.danielkirby.co.uk``\n\n" +
+                .setDescription("Use the following address to join the vanilla server ``mc.danielkirby.co.uk``\n\n" +
                         "Use the following address to join the modded server ``rl.danielkirby.co.uk``\n\n" +
                         "A list of all planned farms for the vanilla server can be found [here](https://docs.google.com/spreadsheets/d/1Lo_7kC_atylVCPmcMrybX_gaoaCn79FOckhd_zRuSAU/edit#gid=0)");
 
