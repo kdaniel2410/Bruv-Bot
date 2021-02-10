@@ -60,7 +60,7 @@ public class BruvBot {
         api.addServerLeaveListener(event -> logger.info("Left server " + event.getServer().getName()));
 
         TwitterStreamFactory twitter = new TwitterStreamFactory();
-        twitter.getInstance().addListener(new TwitterStatusListener(api, Constants.TEST_CHANNEL_ID)).filter(new FilterQuery().follow(Constants.MINECRAFT_TWITTER_ID));
-        twitter.getInstance().addListener(new TwitterStatusListener(api, Constants.TEST_CHANNEL_ID)).filter(new FilterQuery().follow(Constants.VALORANT_TWITTER_ID));
+        twitter.getInstance().addListener(new TwitterStatusListener(api, Constants.MINECRAFT_CHANNEL_ID)).filter(new FilterQuery().follow(Constants.MINECRAFT_TWITTER_ID));
+        twitter.getInstance().addListener(new TwitterStatusListener(api, Constants.VALORANT_CHANNEL_ID)).filter(new FilterQuery().follow(Constants.VALORANT_TWITTER_ID));
     }
 }
