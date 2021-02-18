@@ -2,7 +2,6 @@ package com.github.kdaniel2410;
 
 import com.github.kdaniel2410.commands.*;
 import com.github.kdaniel2410.listeners.BrianMessageListener;
-import com.github.kdaniel2410.listeners.TwitterStatusListener;
 import de.btobastian.sdcf4j.CommandHandler;
 import de.btobastian.sdcf4j.handler.JavacordHandler;
 import org.apache.logging.log4j.LogManager;
@@ -10,8 +9,6 @@ import org.apache.logging.log4j.Logger;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 import org.javacord.api.entity.permission.Permissions;
-import twitter4j.FilterQuery;
-import twitter4j.TwitterStreamFactory;
 
 public class BruvBot {
 
@@ -58,9 +55,5 @@ public class BruvBot {
 
         api.addServerJoinListener(event -> logger.info("Joined server " + event.getServer().getName()));
         api.addServerLeaveListener(event -> logger.info("Left server " + event.getServer().getName()));
-
-        TwitterStreamFactory twitter = new TwitterStreamFactory();
-        twitter.getInstance().addListener(new TwitterStatusListener(api, Constants.MINECRAFT_CHANNEL_ID)).filter(new FilterQuery().follow(Constants.MINECRAFT_TWITTER_ID));
-        twitter.getInstance().addListener(new TwitterStatusListener(api, Constants.VALORANT_CHANNEL_ID)).filter(new FilterQuery().follow(Constants.VALORANT_TWITTER_ID));
     }
 }
