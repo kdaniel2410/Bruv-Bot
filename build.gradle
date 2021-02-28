@@ -17,8 +17,6 @@ dependencies {
     implementation 'com.github.Bastian.sdcf4j:sdcf4j:v1.0.10'
     implementation 'com.github.Bastian.sdcf4j:sdcf4j-javacord:v1.0.10'
     implementation 'org.apache.logging.log4j:log4j-core:2.11.0'
-    implementation 'org.twitter4j:twitter4j-core:4.0.7'
-    implementation 'org.twitter4j:twitter4j-stream:4.0.7'
 }
 
 test {
