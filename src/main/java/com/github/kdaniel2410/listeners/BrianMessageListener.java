@@ -17,7 +17,8 @@ public class BrianMessageListener implements MessageCreateListener {
             "i want to be where u will never be",
             "i want to wake up and go to places you'll never get too",
             "he's glued to his phone and looks sad or something all the time and doesn't start talks with me much like he used to",
-            "xD"};
+            "xD",
+            "okay Blender Guru 2.0"};
 
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
