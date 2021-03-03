@@ -38,6 +38,7 @@ public class BruvBot {
         handler.registerCommand(new FartCommand());
         handler.registerCommand(new GithubCommand());
         handler.registerCommand(new GizmoCommand());
+        handler.registerCommand(new GmodCommand());
         handler.registerCommand(new HaroldCommand());
         handler.registerCommand(new HelpCommand(handler));
         handler.registerCommand(new InspireMeCommand());
