@@ -30,6 +30,13 @@ public class RoleMeCommand implements CommandExecutor {
             });
         }
 
+        if (args[0].equals("clear")) {
+            server.getRoles().forEach(role -> {
+                if (role.getPosition() >= getLowestRolePosition(server)) return;
+                user.removeRole(role).exceptionally(ExceptionLogger.get());
+            });
+        }
+
         message.getMentionedRoles().forEach(role -> {
             if (role.getPosition() >= getLowestRolePosition(server)) return;
             if (user.getRoles(server).contains(role)) user.removeRole(role);
