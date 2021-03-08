@@ -18,8 +18,9 @@ public class RoleMeCommand implements CommandExecutor {
 
     @Command(aliases = {">roleme", ">rm"}, description = "Add or remove roles.", usage = ">roleme <@role>")
     public void onCommand(String[] args, Server server, TextChannel channel, User user, Message message) {
-        if (message.getMentionedRoles().size() < 1 || args.length < 1) {
-            sendMissingRoleMessage(server, channel).thenAccept(response -> message.addMessageDeleteListener(event -> response.delete()));
+        if (message.getMentionedRoles().size() < 1 && args.length < 1) {
+            sendMissingRoleMessage(server, channel)
+                    .thenAccept(response -> message.addMessageDeleteListener(event -> response.delete()));
         }
 
         if (args[0].equals("all")) {
