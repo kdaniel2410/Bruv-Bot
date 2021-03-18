@@ -37,10 +37,16 @@ public class RoleMeCommand implements CommandExecutor {
             });
         }
 
+        for (String roleName : args) {
+            if (server.getRolesByNameIgnoreCase(roleName).isEmpty()) return;
+            server.getRolesByNameIgnoreCase(roleName).forEach(role -> {
+                if (role.getPosition() >= getLowestRolePosition(server)) return;
+                if (user.getRoles(server).contains(role)) user.removeRole(role);
+                else user.addRole(role);
+            });
+        }
+
         message.getMentionedRoles().forEach(role -> {
-            if (role.getPosition() >= getLowestRolePosition(server)) return;
-            if (user.getRoles(server).contains(role)) user.removeRole(role);
-            else user.addRole(role);
         });
     }
 
